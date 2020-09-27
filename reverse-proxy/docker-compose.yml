@@ -1,0 +1,14 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
+    links:
+      - app
+  app:
+    image: tongueroo/sinatra
+    ports:
+      - 4567:4567
+
